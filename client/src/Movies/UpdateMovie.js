@@ -9,6 +9,14 @@ const UpdateMovie = (props) => {
         stars: [],
     })
 
+    useEffect(() => {
+        const id = props.match.params.id
+        axios
+      .get(`http://localhost:5000/api/movies/${id}`)
+      .then(res => setUpdateMovie(res.data))
+      .catch(err => console.log(err.response));
+    }, [])
+
 }   
 
     export default UpdateMovie;
