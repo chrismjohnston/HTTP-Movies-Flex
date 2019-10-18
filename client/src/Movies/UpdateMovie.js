@@ -17,6 +17,16 @@ const UpdateMovie = (props) => {
       .catch(err => console.log(err.response));
     }, [])
 
+    const movieInputHandler = e => {
+        const name = e.target.name;
+        let value = e.target.value;
+        if(name === 'metascore') {
+            value = Number(value);
+        }
+
+        setUpdateMovie({...updateMovie, [name]: value})
+    }
+
 }   
 
     export default UpdateMovie;
