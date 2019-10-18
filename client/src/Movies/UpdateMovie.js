@@ -46,6 +46,7 @@ const UpdateMovie = (props) => {
 
     return (
         <form onSubmit={(e) => {
+            e.stopPropagation();
             e.preventDefault();
             updatedMovieSubmit();
         }}>
